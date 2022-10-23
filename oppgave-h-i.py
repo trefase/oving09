@@ -1,7 +1,6 @@
 #h) Lag en funksjon som lagrer ei liste med avtaler til ei tekstfil. Tenk over hva som vil være et
 #fornuftig format for ei slik tekstfil.
 import csv
-import numpy
 
 #eksempel??
 avtaleheader = ['tittel','sted','starttidpunk','varighet']
