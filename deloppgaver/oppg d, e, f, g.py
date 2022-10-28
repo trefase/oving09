@@ -65,8 +65,8 @@ def ny_avtale():
        
         
         print("Bekreft ", Avtale(tittel,sted, starttidspunkt, varighet, kategori))
-        bekreftet = input("Ja/Nei:")        
-        if bekreftet == "Ja" or bekreftet =="ja":
+        bekreftet = input("Ja/Nei:")     
+        if bekreftet == "Ja" or bekreftet =="ja": 
            
             dict_liste[tittel]=Avtale(tittel,sted, starttidspunkt, varighet, kategori)
             liste.append(Avtale(tittel,sted, starttidspunkt, varighet, kategori))
