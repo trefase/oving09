@@ -15,3 +15,18 @@ Function Param. lower_with_under
 Local vars      lower_with_under
 
 Filename        lower-with-dash
+
+
+----------
+
+# File name: hoved-script.py
+# Description: Basic format for Python scripts
+# Author: Louis de Bruijn
+# Date: 19-05-2020
+
+import
+
+klasser
+funksjoner
+rest
+
