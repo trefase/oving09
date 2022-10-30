@@ -75,6 +75,20 @@ def ny_avtale():
 
    
 #Valg av funksjoner som skriver ut liste med avtale, dataframe er mest oversiktlig
+#Funksjon som skriver dictionary til csv fil 
+def avtaler_til_fil():
+    with open('avtaler.csv', 'a',newline='') as csv_file:  # appender csv filen, endre til w hvis den skal overskrives
+        writer = csv.writer(csv_file,delimiter =";")
+        for key, value in dict_liste.items():
+            writer.writerow([key,value])
+#Funksjon som leser csv fil til dictionary  
+def avtaler_fra_fil():
+    #global dict_liste 
+    #dict_liste.clear() # slett den eksisterende listen
+    with open('avtaler.csv', 'r') as csv_file:
+        reader = csv.reader(csv_file,delimiter=';')
+        dict_liste = dict(reader)
+         
 
 #Skriver ut liste - indeks og avtalestreng 
 def skriv_ut_liste(liste):
