@@ -1,9 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Oct 26 18:49:19 2022
 
-
+@author: Henry
+"""
 
 from datetime import datetime
 import pandas as pd
-import csv
 
 
 dict_liste = dict()  
@@ -76,20 +79,6 @@ def ny_avtale():
 
    
 #Valg av funksjoner som skriver ut liste med avtale, dataframe er mest oversiktlig
-#Funksjon som skriver dictionary til csv fil 
-def avtaler_til_fil():
-    with open('avtaler.csv', 'a',newline='') as csv_file:  # appender csv filen, endre til w hvis den skal overskrives
-        writer = csv.writer(csv_file,delimiter =";")
-        for key, value in dict_liste.items():
-            writer.writerow([key,value])
-#Funksjon som leser csv fil til dictionary  
-def avtaler_fra_fil():
-    #global dict_liste 
-    #dict_liste.clear() # slett den eksisterende listen
-    with open('avtaler.csv', 'r') as csv_file:
-        reader = csv.reader(csv_file,delimiter=';')
-        dict_liste = dict(reader)
-         
 
 #Skriver ut liste - indeks og avtalestreng 
 def skriv_ut_liste(liste):
@@ -112,43 +101,3 @@ def skriv_ut_alle_avtaler():
        
     print("Utskrift liste")
     print(df_liste)
-
-
-            
-            
-            
-
-def slette_avtale():
-    print(avtale_liste)
-    valg = int(input("Hvilken avtale ønsker du å slette: "))
-    
-def redigere_avtale():
-    print(avtale_liste)
-    valg = int(input("Hvilken avtale ønsker du å redigere: "))
-
-
-def hovedmeny():
-    print("1: Les inn avtaler fra fil")
-    print("2: Skriv avtalene til fil")
-    print("3: Skriv inn en ny avtale")
-    print("4: Skriv ut alle avtalene")
-    print("5: Slette en avtale")
-    print("6: Redigere en avtale")
-    print("7: Jeg vil avslutte")
-    valg=int(input("velg et alternativ: "))
-    if valg==1:
-        avtaler_fra_fil()
-    elif valg==2:
-        avtaler_til_fil()
-    elif valg ==3:
-        ny_avtale()
-    elif valg==4:
-        skriv_ut_alle_avtaler()
-    elif valg==5:
-        slette_avtale()
-    elif valg==6:
-        redigere_avtale()
-    elif valg==7:
-        exit
-    else:
-        print("Ugyldig svar, vennligst bruk 1-7")
