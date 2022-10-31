@@ -9,7 +9,6 @@ import csv
 dict_liste = dict()  
 liste=[]  
 
-
 #Klasse for ny avtale 
 class Avtale():
     def __init__(self, init_tittel = "", init_sted = "", init_starttidspunkt = datetime.now(), init_varighet = 0, init_kategori ="" ):
@@ -19,15 +18,13 @@ class Avtale():
         self.varighet = init_varighet
         self.kategori = init_kategori
         
-
+############################################################
+##########               Funksjoner               ##########
+############################################################
 #Avtale streng __str__
     def __str__(self):
         return f"{self.tittel}, {self.sted}, {self.starttidspunkt}, {self.varighet} min, {self.kategori}"
  
-
-
-
-
 
 #funksjon ny avtale - avtalen havner i liste og dictionary som objekt
 def ny_avtale():
@@ -117,7 +114,8 @@ def skriv_ut_alle_avtaler():
             
             
             
-
+#Torbjørn fix og fjern kommentar
+"""
 def avtaler_fra_fil():
 print("Du har valgt: 1: Skriv inn avtaler fra fil")
 fortsette_tilbake = input("Hvis du vil fortsette, trykk ENTER, hvis du vil gå tilbake, tast 0")
@@ -193,3 +191,4 @@ exit
 else:
 print("Ugyldig svar, vennligst bruk 1-6")
 hovedmeny(1)
+"""
