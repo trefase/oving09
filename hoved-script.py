@@ -112,13 +112,21 @@ def skriv_ut_alle_avtaler():
 
 #filterfunksjon for liste, aktuell liste (avtale_liste), kolonne som skal letes i (kolonne) og søkestreng (lete_streng).
 #burde gjerne lage felles public dataframe!!
-
+#exceptionhandling!
 def liste_filter(avtale_liste, kolonne, lete_streng):
     data_frame = pd.DataFrame(columns = ['tittel','sted','starttidspunkt','varighet','kategori'])
     for i in avtale_liste:
         df = pd.DataFrame([[i.tittel, i.sted, str(i.starttidspunkt), i.varighet, i.kategori]], columns=('tittel','sted','starttidspunkt','varighet','kategori'))
         data_frame = data_frame.append([df], ignore_index=True)
-    return print("Søkeresultat: \n",data_frame[data_frame['%s'%(kolonne)].str.contains(lete_streng)])
+    try: 
+        data_frame[data_frame['%s'%(kolonne)].str.contains(lete_streng)]
+    except:
+        print("\nSøket ga ingen resultater.\n")
+    else:
+        return print("Søkeresultat: \n",data_frame[data_frame['%s'%(kolonne)].str.contains(lete_streng)])
+
+   
+
 
 #Testfunksjon liste_filter(avtale_liste=liste, kolonne='starttidspunkt', lete_streng='2022')
 ny_avtale()
