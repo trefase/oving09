@@ -8,13 +8,13 @@ def redigere_avtale():
 
 
 def hovedmeny():
-    print("Les inn avtaler fra fil")
-    print("Skriv avtalene til fil")
-    print("Skriv inn en ny avtale")
-    print("Skriv ut alle avtalene")
-    print("Slette en avtale")
-    print("Redigere en avtale")
-    print("Jeg vil avslutte")
+    print("1: Les inn avtaler fra fil")
+    print("2: Skriv avtalene til fil")
+    print("3: Skriv inn en ny avtale")
+    print("4: Skriv ut alle avtalene")
+    print("5: Slette en avtale")
+    print("6: Redigere en avtale")
+    print("7: Jeg vil avslutte")
     valg=int(input("velg et alternativ: "))
     if valg==1:
         avtaler_fra_fil()
