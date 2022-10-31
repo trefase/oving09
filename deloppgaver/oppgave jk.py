@@ -21,3 +21,13 @@ def tittel_filter(avtale_liste, lete_streng):
 
 
 tittel_filter(datafil,input('Hva leter du etter?: '))
+
+#OBSOLETE
+"""
+def dato_filter(avtale_liste, dato):
+    data_frame = pd.DataFrame(columns = ['tittel','sted','starttidspunkt','varighet','kategori'])
+    for i in avtale_liste:
+        df = pd.DataFrame([[i.tittel, i.sted, str(i.starttidspunkt), i.varighet, i.kategori]], columns=('tittel','sted','starttidspunkt','varighet','kategori'))
+        data_frame = data_frame.append([df], ignore_index=True)
+    return print("Søkeresultat: \n",data_frame[data_frame['starttidspunkt'].str.contains(dato)])
+"""
