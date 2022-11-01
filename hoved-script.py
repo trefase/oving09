@@ -54,9 +54,10 @@ def avtaler_fra_fil():
 #burde gjerne lage felles public dataframe!!
 #exceptionhandling!
 def liste_filter(avtale_liste):
-    kolonne = input("Hvilken kolonne ønsker du å lete i? 'tittel', 'sted', 'starttidspunkt', 'varighet', 'kategori': ")
+    gyldige_kolonner = ["tittel", "sted", "starttidspunkt", "varighet", "kategori"]  
+    kolonne = input("Hvilken kolonne ønsker du å lete i? %s:"%(gyldige_kolonner))
     lete_streng = input('Hva leter du etter?: ')
-
+    
     data_frame = pd.DataFrame(columns = ['tittel','sted','starttidspunkt','varighet','kategori'])
     for i in avtale_liste:
         df = pd.DataFrame([[i.tittel, i.sted, str(i.starttidspunkt), i.varighet, i.kategori]], columns=('tittel','sted','starttidspunkt','varighet','kategori'))
@@ -66,14 +67,13 @@ def liste_filter(avtale_liste):
     except:
         print("\nSøket ga ingen resultater.\n")
     else:
-        return print("Søkeresultat: \n",data_frame[data_frame['%s'%(kolonne)].str.contains(lete_streng)])
+        return print("Søkeresultat som inneholder '%s': \n"%(lete_streng),data_frame[data_frame['%s'%(kolonne)].str.contains(lete_streng)])
+
 
    
 
 
 #Testfunksjon liste_filter(avtale_liste=liste, kolonne='starttidspunkt', lete_streng='2022')
-ny_avtale()
-print(*liste, sep='\n')
 liste_filter(avtale_liste=liste)
 
 
