@@ -151,7 +151,7 @@ def slette_avtale():
         hovedmeny()
     else:
         pass
-    print("Denne funksjonen sletter en avtale")#erstatt denne linjen med funksjonen
+    liste_filter(liste)
 def redigere_avtale():
     print("Du har valgt: 6: Redigere en avtale")
     fortsette_tilbake = input("For å fortsette, trykk ENTER, hvis du ønsker å gå tilbake til hovedmenyen, tast 0 :")
@@ -159,7 +159,7 @@ def redigere_avtale():
         hovedmeny()
     else:
         pass
-    print("denne funksjonen redigerer en avtale")#erstatt denne linjen med funksjonen
+    liste_filter(liste)
 def hovedmeny(start):                 
     while start == 1:
         print("1: Les inn avtaler fra fil")
