@@ -70,18 +70,6 @@ def liste_filter(avtale_liste):
         return print("Søkeresultat som inneholder '%s': \n"%(lete_streng),data_frame[data_frame['%s'%(kolonne)].str.contains(lete_streng)])
 
 
-   
-
-
-#Testfunksjon liste_filter(avtale_liste=liste, kolonne='starttidspunkt', lete_streng='2022')
-liste_filter(avtale_liste=liste)
-
-
-
-
-
-
-
             
 #Torbjørn fix og fjern kommentar
 def avtaler_fra_fil():
