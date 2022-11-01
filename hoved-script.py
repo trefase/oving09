@@ -136,80 +136,79 @@ liste_filter(liste,input(str("Hvilken kolonne ønsker du å lete i? 'tittel', 's
 
             
 #Torbjørn fix og fjern kommentar
-"""
 def avtaler_fra_fil():
-print("Du har valgt: 1: Skriv inn avtaler fra fil")
-fortsette_tilbake = input("Hvis du vil fortsette, trykk ENTER, hvis du vil gå tilbake, tast 0")
-if fortsette_tilbake == "0":
-hovedmeny(1)
-else:
-pass
-print("Denne funksjonen skriver inn avtalene til en ny fil") #erstatt denne linjen med funksjonen
+    print("Du har valgt: 1: Skriv inn avtaler fra fil")
+    fortsette_tilbake = input("Hvis du vil fortsette, trykk ENTER, hvis du vil gå tilbake, tast 0")
+    if fortsette_tilbake == "0":
+        hovedmeny(1)
+    else:
+        pass
+    print("Denne funksjonen skriver inn avtalene til en ny fil") #erstatt denne linjen med funksjonen
 def avtaler_til_fil():
-print("Du har valgt: 2: Skriv avtalene til fil")
-fortsette_tilbake = input("Hvis du vil fortsette, trykk ENTER, hvis du vil gå tilbake, tast 0")
-if fortsette_tilbake == "0":
-hovedmeny(1)
-else:
-pass
-print("Denne funksjonen skriver avtalene til fil")#Erstatt denne linjen med funksjonen
+    print("Du har valgt: 2: Skriv avtalene til fil")
+    fortsette_tilbake = input("Hvis du vil fortsette, trykk ENTER, hvis du vil gå tilbake, tast 0")
+    if fortsette_tilbake == "0":
+        hovedmeny(1)
+    else:
+        pass
+    print("Denne funksjonen skriver avtalene til fil")#Erstatt denne linjen med funksjonen
 def ny_avtale():
-print("Du har valgt: 3: Skriv inn en ny avtale")
-fortsette_tilbake = input("For å fortsette, trykk ENTER, hvis du ønsker å gå tilbake til hovedmenyen, tast 0 :")
-if fortsette_tilbake == "0":
-hovedmeny(1)
-else:
-pass
-print("Denne funksjonen skriver inn en ny avtale") #erstatt denne linjen med funksjonen
+    print("Du har valgt: 3: Skriv inn en ny avtale")
+    fortsette_tilbake = input("For å fortsette, trykk ENTER, hvis du ønsker å gå tilbake til hovedmenyen, tast 0 :")
+    if fortsette_tilbake == "0":
+        hovedmeny(1)
+    else:
+        pass
+    print("Denne funksjonen skriver inn en ny avtale") #erstatt denne linjen med funksjonen
 def skriv_ut_alle_avtaler():
-print("Du har valgt: 4: Skriv ut alle avtalene")
-fortsette_tilbake = input("For å fortsette, tast 1, hvis du ønsker å gå tilbake til hovedmenyen, tast 0 :")
-if fortsette_tilbake == "0":
-hovedmeny()
-else:
-pass
-print("Denne funksjonen skriver ut alle avtalene")#erstatt denne linjen med funksjonen
+    print("Du har valgt: 4: Skriv ut alle avtalene")
+    fortsette_tilbake = input("For å fortsette, tast 1, hvis du ønsker å gå tilbake til hovedmenyen, tast 0 :")
+    if fortsette_tilbake == "0":
+        hovedmeny()
+    else:
+        pass
+    print("Denne funksjonen skriver ut alle avtalene")#erstatt denne linjen med funksjonen
 def slette_avtale():
-print("Du har valgt: 5: Slette en avtale")
-fortsette_tilbake = input("For å fortsette, trykk ENTER, hvis du ønsker å gå tilbake til hovedmenyen, tast 0 :")
-if fortsette_tilbake == 1:
-hovedmeny()
-else:
-pass
-print("Denne funksjonen sletter en avtale")#erstatt denne linjen med funksjonen
+    print("Du har valgt: 5: Slette en avtale")
+    fortsette_tilbake = input("For å fortsette, trykk ENTER, hvis du ønsker å gå tilbake til hovedmenyen, tast 0 :")
+    if fortsette_tilbake == 1:
+        hovedmeny()
+    else:
+        pass
+    print("Denne funksjonen sletter en avtale")#erstatt denne linjen med funksjonen
 def redigere_avtale():
-print("Du har valgt: 6: Redigere en avtale")
-fortsette_tilbake = input("For å fortsette, trykk ENTER, hvis du ønsker å gå tilbake til hovedmenyen, tast 0 :")
-if fortsette_tilbake == 1:
-hovedmeny()
-else:
-pass
-print("denne funksjonen redigerer en avtale")#erstatt denne linjen med funksjonen
-def hovedmeny(start):
-while start == 1:
-print("1: Les inn avtaler fra fil")
-print("2: Skriv avtalene til fil")
-print("3: Skriv inn en ny avtale")
-print("4: Skriv ut alle avtalene")
-print("5: Slette en avtale")
-print("6: Redigere en avtale")
-print("0: Jeg vil avslutte")
-valg=int(input("velg et alternativ: "))
-if valg==1:
-avtaler_fra_fil()
-elif valg==2:
-avtaler_til_fil()
-elif valg ==3:
-ny_avtale()
-elif valg==4:
-skriv_ut_alle_avtaler()
-elif valg==5:
-slette_avtale()
-elif valg==6:
-redigere_avtale()
-elif valg==7:
-exit
-else:
-print("Ugyldig svar, vennligst bruk 1-6")
+    print("Du har valgt: 6: Redigere en avtale")
+    fortsette_tilbake = input("For å fortsette, trykk ENTER, hvis du ønsker å gå tilbake til hovedmenyen, tast 0 :")
+    if fortsette_tilbake == 1:
+        hovedmeny()
+    else:
+        pass
+    print("denne funksjonen redigerer en avtale")#erstatt denne linjen med funksjonen
+def hovedmeny(start):                 
+    while start == 1:
+        print("1: Les inn avtaler fra fil")
+        print("2: Skriv avtalene til fil")
+        print("3: Skriv inn en ny avtale")
+        print("4: Skriv ut alle avtalene")
+        print("5: Slette en avtale")
+        print("6: Redigere en avtale")
+        print("0: Jeg vil avslutte")
+        valg=int(input("velg et alternativ: "))
+        if valg==1:
+            avtaler_fra_fil()
+        elif valg==2:
+            avtaler_til_fil()
+        elif valg ==3:
+            ny_avtale()
+        elif valg==4:
+            skriv_ut_alle_avtaler()
+        elif valg==5:
+            slette_avtale()
+        elif valg==6:
+            redigere_avtale()
+        elif valg==7:
+            exit
+        else:
+            print("Ugyldig svar, vennligst bruk 1-6")
 hovedmeny(1)
-"""
+        
