@@ -22,32 +22,6 @@ class Avtale():
 #Avtale streng __str__
     def __str__(self):
         return f"{self.tittel}, {self.sted}, {self.starttidspunkt}, {self.varighet} min, {self.kategori}"
- 
-
-
-
-
-
-   
-#Valg av funksjoner som skriver ut liste med avtale, dataframe er mest oversiktlig
-#Funksjon som skriver dictionary til csv fil 
-def avtaler_til_fil():
-    with open('avtaler.csv', 'a',newline='') as csv_file:  # appender csv filen, endre til w hvis den skal overskrives
-        writer = csv.writer(csv_file,delimiter =";")
-        for key, value in dict_liste.items():
-            writer.writerow([key,value])
-#Funksjon som leser csv fil til dictionary  
-def avtaler_fra_fil():
-    #global dict_liste 
-    #dict_liste.clear() # slett den eksisterende listen
-    with open('avtaler.csv', 'r') as csv_file:
-        reader = csv.reader(csv_file,delimiter=';')
-        dict_liste = dict(reader)
-         
-
-
-
-
 
 
 #filterfunksjon for liste, aktuell liste (avtale_liste), kolonne som skal letes i (kolonne) og søkestreng (lete_streng).
@@ -80,6 +54,11 @@ def avtaler_fra_fil():
     else:
         pass
     print("Denne funksjonen skriver inn avtalene til en ny fil") #erstatt denne linjen med funksjonen
+    #global dict_liste 
+    #dict_liste.clear() # slett den eksisterende listen
+    with open('avtaler.csv', 'r') as csv_file:
+        reader = csv.reader(csv_file,delimiter=';')
+        dict_liste = dict(reader)
 def avtaler_til_fil():
     print("Du har valgt: 2: Skriv avtalene til fil")
     fortsette_tilbake = input("Hvis du vil fortsette, trykk ENTER, hvis du vil gå tilbake, tast 0")
@@ -88,6 +67,10 @@ def avtaler_til_fil():
     else:
         pass
     print("Denne funksjonen skriver avtalene til fil")#Erstatt denne linjen med funksjonen
+    with open('avtaler.csv', 'a',newline='') as csv_file:  # appender csv filen, endre til w hvis den skal overskrives
+        writer = csv.writer(csv_file,delimiter =";")
+        for key, value in dict_liste.items():
+            writer.writerow([key,value])
 def ny_avtale():
     print("Du har valgt: 3: Skriv inn en ny avtale")
     fortsette_tilbake = input("For å fortsette, trykk ENTER, hvis du ønsker å gå tilbake til hovedmenyen, tast 0 :")
