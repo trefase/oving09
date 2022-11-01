@@ -4,6 +4,8 @@
 from datetime import datetime
 import pandas as pd
 import csv
+import tkinter
+from tkinter import filedialog
 
 
 dict_liste = dict()  
@@ -53,12 +55,14 @@ def avtaler_fra_fil():
         hovedmeny(1)
     else:
         pass
-    print("Denne funksjonen skriver inn avtalene til en ny fil") #erstatt denne linjen med funksjonen
-    #global dict_liste 
-    #dict_liste.clear() # slett den eksisterende listen
-    with open('avtaler.csv', 'r') as csv_file:
-        reader = csv.reader(csv_file,delimiter=';')
-        dict_liste = dict(reader)
+        print("Denne funksjonen leser inn avtalefil") #erstatt denne linjen med funksjonen
+        tkinter.Tk().withdraw() # prevents an empty tkinter window from appearing
+        filnavn = filedialog.askopenfilename()
+        #global dict_liste 
+        #dict_liste.clear() # slett den eksisterende listen
+        with open(filnavn, 'r') as csv_file:
+            reader = csv.reader(csv_file,delimiter=';')
+            dict_liste = dict(reader)
 def avtaler_til_fil():
     print("Du har valgt: 2: Skriv avtalene til fil")
     fortsette_tilbake = input("Hvis du vil fortsette, trykk ENTER, hvis du vil gå tilbake, tast 0")
@@ -66,11 +70,10 @@ def avtaler_til_fil():
         hovedmeny(1)
     else:
         pass
-    print("Denne funksjonen skriver avtalene til fil")#Erstatt denne linjen med funksjonen
-    with open('avtaler.csv', 'a',newline='') as csv_file:  # appender csv filen, endre til w hvis den skal overskrives
-        writer = csv.writer(csv_file,delimiter =";")
-        for key, value in dict_liste.items():
-            writer.writerow([key,value])
+        with open('avtaler.csv', 'a',newline='') as csv_file: # appender csv filen, endre til w hvis den skal overskrives
+            writer = csv.writer(csv_file,delimiter =";")
+            for key, value in dict_liste.items():
+                writer.writerow([key,value])
 def ny_avtale():
     print("Du har valgt: 3: Skriv inn en ny avtale")
     fortsette_tilbake = input("For å fortsette, trykk ENTER, hvis du ønsker å gå tilbake til hovedmenyen, tast 0 :")
