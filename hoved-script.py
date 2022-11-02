@@ -1,6 +1,4 @@
 
-
-#sss
 from datetime import datetime
 import pandas as pd
 import csv
@@ -26,28 +24,31 @@ class Avtale():
         return f"{self.tittel}, {self.sted}, {self.starttidspunkt}, {self.varighet} min, {self.kategori}"
 
 
-#filterfunksjon for liste, aktuell liste (avtale_liste), kolonne som skal letes i (kolonne) og søkestreng (lete_streng).
-#burde gjerne lage felles public dataframe!!
-#exceptionhandling!
+#filterfunksjon for liste
 def liste_filter(avtale_liste):
-    gyldige_kolonner = ["tittel", "sted", "starttidspunkt", "varighet", "kategori"]  
-    kolonne = input("Hvilken kolonne ønsker du å lete i? %s:"%(gyldige_kolonner))
-    lete_streng = input('Hva leter du etter?: ')
+    gyldige_kolonner = ["tittel", "sted", "starttidspunkt", "varighet", "kategori"]
+    gyldige_kolonner_print = ["1. Tittel", "2. Sted", "3. Starttidspunkt", "4. Varighet", "5. Kategori"]
+    print("Hvilken kolonne ønsker du å lete i?")
+    print('\n'.join(gyldige_kolonner_print))
+    while True:
+        try:
+            kolonne = int(input('Skriv inn valg [1-6]: '))
+            if kolonne < 1 or kolonne > 5:
+                raise ValueError
+        except ValueError:
+            print('Velg en gyldig kategori')
+        else:
+            lete_streng = input('Hva leter du etter?: ')
+            data_frame = pd.DataFrame(columns = ['tittel','sted','starttidspunkt','varighet','kategori'])
+            for i in avtale_liste:
+                df = pd.DataFrame([[i.tittel, i.sted, str(i.starttidspunkt), i.varighet, i.kategori]], columns=('tittel','sted','starttidspunkt','varighet','kategori'))
+                data_frame = data_frame.append([df], ignore_index=True)
+            return print("Søkeresultat som inneholder '%s': \n"%(lete_streng),data_frame[data_frame['%s'%(gyldige_kolonner[kolonne+1])].str.contains(lete_streng)])           
     
-    data_frame = pd.DataFrame(columns = ['tittel','sted','starttidspunkt','varighet','kategori'])
-    for i in avtale_liste:
-        df = pd.DataFrame([[i.tittel, i.sted, str(i.starttidspunkt), i.varighet, i.kategori]], columns=('tittel','sted','starttidspunkt','varighet','kategori'))
-        data_frame = data_frame.append([df], ignore_index=True)
-    try: 
-        data_frame[data_frame['%s'%(kolonne)].str.contains(lete_streng)]
-    except:
-        print("\nSøket ga ingen resultater.\n")
-    else:
-        return print("Søkeresultat som inneholder '%s': \n"%(lete_streng),data_frame[data_frame['%s'%(kolonne)].str.contains(lete_streng)])
+    
 
 
-            
-#Torbjørn fix og fjern kommentar
+        
 def avtaler_fra_fil():
     print("Du har valgt: 1: Skriv inn avtaler fra fil")
     fortsette_tilbake = input("Hvis du vil fortsette, trykk ENTER, hvis du vil gå tilbake, tast 0")
@@ -190,4 +191,4 @@ def hovedmeny(start):
         else:
             print("Ugyldig svar, vennligst bruk 1-6")
 hovedmeny(1)
-        
+   
