@@ -253,8 +253,9 @@ def hovedmeny(start):
         print("4: Skriv ut alle avtalene")
         print("5: Slette en avtale")
         print("6: Redigere en avtale")
+        print("7: Søke i avtaler")
         print("0: Jeg vil avslutte")
-        valg=int(input("velg et alternativ: "))
+        valg=int(input("Velg et alternativ: "))
         if valg==1:
             avtaler_fra_fil()
         elif valg==2:
@@ -268,7 +269,7 @@ def hovedmeny(start):
         elif valg==6:
             redigere_avtale()
         elif valg==7:
-            exit
+            liste_filter(liste)
         else:
             print("Ugyldig svar, vennligst bruk 1-6")
 hovedmeny(1)
