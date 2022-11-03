@@ -58,11 +58,14 @@ def avtaler_fra_fil():
         pass
         tkinter.Tk().withdraw() # prevents an empty tkinter window from appearing
         filnavn = filedialog.askopenfilename()
-        #global dict_liste 
+        global dict_liste
         #dict_liste.clear() # slett den eksisterende listen
         with open(filnavn, 'r') as csv_file:
             reader = csv.reader(csv_file,delimiter=';')
             dict_liste = dict(reader)
+        print ("Lest følgende avtaler fra fil: ")
+        for i in (dict_liste):
+            print(i," - ",dict_liste[i])
         input("For å gå tilbake til hovedmenyen, trykk ENTER")
         hovedmeny(1)
 def avtaler_til_fil():
@@ -76,6 +79,9 @@ def avtaler_til_fil():
             writer = csv.writer(csv_file,delimiter =";")
             for key, value in dict_liste.items():
                 writer.writerow([key,value])
+            print ("Skrevet følgende avtaler til fil: ")
+            for i in (dict_liste):
+                print(i," - ",dict_liste[i])
     input("For å gå tilbake til hovedmenyen, trykk ENTER")
     hovedmeny(1)
     
