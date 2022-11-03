@@ -38,12 +38,12 @@ def liste_filter(avtale_liste):
         except ValueError:
             print('Velg en gyldig kategori')
         else:
-            lete_streng = input('Hva leter du etter?: ')
+            lete_streng = str(input('Hva leter du etter?: '))
             data_frame = pd.DataFrame(columns = ['tittel','sted','starttidspunkt','varighet','kategori'])
             for i in avtale_liste:
                 df = pd.DataFrame([[i.tittel, i.sted, str(i.starttidspunkt), i.varighet, i.kategori]], columns=('tittel','sted','starttidspunkt','varighet','kategori'))
                 data_frame = data_frame.append([df], ignore_index=True)
-            return print("Søkeresultat som inneholder '%s': \n"%(lete_streng),data_frame[data_frame['%s'%(gyldige_kolonner[kolonne+1])].str.contains(lete_streng)])           
+            return print("Søkeresultat som inneholder '%s': \n"%(lete_streng),data_frame[data_frame['%s'%(gyldige_kolonner[kolonne-1])].str.contains(lete_streng)])           
     
     
 
