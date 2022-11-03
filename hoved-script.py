@@ -147,7 +147,7 @@ def skriv_ut_alle_avtaler():
     
     
     
-    print("Denne funksjonen skriver ut alle avtalene")#erstatt denne linjen med funksjonen
+    
 def slette_avtale():
     print("Du har valgt: 5: Slette en avtale")
     fortsette_tilbake = input("For å fortsette, trykk ENTER, hvis du ønsker å gå tilbake til hovedmenyen, tast 0 :")
