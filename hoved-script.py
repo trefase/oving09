@@ -56,7 +56,6 @@ def avtaler_fra_fil():
         hovedmeny(1)
     else:
         pass
-        print("Denne funksjonen leser inn avtalefil") #erstatt denne linjen med funksjonen
         tkinter.Tk().withdraw() # prevents an empty tkinter window from appearing
         filnavn = filedialog.askopenfilename()
         #global dict_liste 
@@ -173,7 +172,7 @@ def ny_avtale_til_meny():
                 print("Skriv avtalen på nytt.")
                 continue    
                 
-                input("For å gå tilbake til hovedmenyen, trykk ENTER")#han som har lagd den my flytte denne på riktig plass, finner ikke ut av det
+        input("For å gå tilbake til hovedmenyen, trykk ENTER")#han som har lagd den my flytte denne på riktig plass, finner ikke ut av det
     
     
     
