@@ -82,7 +82,7 @@ def avtaler_til_fil():
     
 def ny_avtale():
     bekreftet = "" 
-        while bekreftet != "Ja":
+    while bekreftet != "Ja":
             tittel = input("Rediger avtale\nOppgi tittel:")
             sted = input("Oppgi sted:")
             print("Oppgi tidpunkt(ÅÅÅÅ-MM-DD TT:MM:SS):")
@@ -122,7 +122,8 @@ def ny_avtale():
                 print("Skriv avtalen på nytt.")
                 continue    
                 
-                input("For å gå tilbake til hovedmenyen, trykk ENTER")
+    input("For å gå tilbake til hovedmenyen, trykk ENTER")
+    hovedmeny(1)
     
 def ny_avtale_til_meny():
     print("Du har valgt: 3: Skriv inn en ny avtale")
